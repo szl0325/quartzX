@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quartzX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- #CSS Links -->
+    <!-- Basic Styles -->
+    <link rel="stylesheet" type="text/css" media="screen" href="misc/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="misc/css/font-awesome.min.css">
+
+    <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+    <link rel="stylesheet" type="text/css" media="screen" href="misc/css/smartadmin-production-plugins.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="misc/css/smartadmin-production.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="misc/css/smartadmin-skins.min.css">
+    <!-- SmartAdmin RTL Support -->
+    <link rel="stylesheet" type="text/css" media="screen" href="misc/css/smartadmin-rtl.min.css">
+</head>
+<body class="desktop-detected smart-style-6">
+<!-- #HEADER -->
+<header id="header">
+    <div id="logo-group">
+        <span id="logo"> <img src="misc/img/logo.png" alt="SmartAdmin"> </span>
+    </div>
+
+    <div class="pull-right">
+        <div id="hide-menu" class="btn-header pull-right">
+            <span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+        </div>
+        <div id="logout" class="btn-header transparent pull-right">
+            <span>
+                <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="注销当前账号并返回登录页">
+                    <i class="fa fa-sign-out"></i>
+                </a>
+            </span>
+        </div>
+    </div>
+</header>
+<!-- END HEADER -->
+
+<!-- #NAVIGATION -->
+    <aside id="left-panel">
+        <div class="login-info">
+            <span>
+                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                    <img src="misc/img/avatars/sunny.png" alt="me" class="online" />
+                    <span>
+                        sunzhanlong
+                    </span>
+                    <i class="fa fa-angle-down"></i>
+                </a>
+            </span>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">菜单1</span></a>
+                    <ul>
+                        <li class="">
+                            <a href="test.html" title="Dashboard"><span class="menu-item-parent">子菜单1</span></a>
+                        </li>
+                        <li class="">
+                            <a href="test2.html" title="Dashboard"><span class="menu-item-parent">子菜单2</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-lg fa-fw fa-cube"></i> <span class="menu-item-parent">SmartAdmin Intel</span></a>
+                    <ul>
+                        <li class="">
+                            <a href="ajax/layouts.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-gear"></i> <span class="menu-item-parent">App Layouts</span></a>
+                        </li>
+                        <li class="">
+                            <a href="ajax/skins.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-picture-o"></i> <span class="menu-item-parent">Prebuilt Skins</span></a>
+                        </li>
+                        <li>
+                            <a href="ajax/difver.html"><i class="fa fa-stack-overflow"></i> App Variations</a>
+                        </li>
+                        <li>
+                            <a href="ajax/applayout.html"><i class="fa fa-cube"></i> App Settings</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+    </aside>
+<!-- END NAVIGATION -->
+
+<!-- #MAIN PANEL -->
+    <div id="main" role="main">
+        <div id="ribbon">
+                    <span class="ribbon-button-alignment">
+                        <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true" data-reset-msg="Would you like to RESET all your saved widgets and clear LocalStorage?"><i class="fa fa-refresh"></i></span>
+                    </span>
+            <ol class="breadcrumb">
+                <!-- This is auto generated -->
+            </ol>
+            <!-- end breadcrumb -->
+
+            <!-- You can also add more buttons to the
+            ribbon for further usability
+
+            Example below:
+
+            <span class="ribbon-button-alignment pull-right" style="margin-right:25px">
+                <a href="#" id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa fa-grid"></i> Change Grid</a>
+                <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa fa-plus"></i> Add</span>
+                <button id="search" class="btn btn-ribbon" data-title="search"><i class="fa fa-search"></i> <span class="hidden-mobile">Search</span></button>
+            </span> -->
+
+        </div>
+
+        <div id="content">
+        </div>
+    </div>
+<!-- END #MAIN PANEL -->
+
+<!-- js -->
+    <script src="misc/js/jquery-2.1.1.min.js"></script>
+    <script src="misc/js/jquery-ui-1.10.3.min.js"></script>
+    <script src="misc/js/app.config.js"></script>
+    <script src="misc/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+    <script src="misc/js/bootstrap/bootstrap.min.js"></script>
+    <script src="misc/js/notification/SmartNotification.min.js"></script>
+    <!--[if IE 8]>
+    <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+    <![endif]-->
+    <script src="misc/js/app.min.js"></script>
+    <script src="misc/js/smart-chat-ui/smart.chat.ui.min.js"></script>
+    <script src="misc/js/smart-chat-ui/smart.chat.manager.min.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>
