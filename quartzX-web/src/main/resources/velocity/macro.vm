@@ -1,0 +1,4 @@
+##布局
+#macro(layout $key)
+#set($layoutPath="vm/layout/${key}.vm")
+#end
