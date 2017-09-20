@@ -16,6 +16,8 @@
 
     <modules>
         <module>quartzX-web</module>
+        <module>quartzX-service</module>
+        <module>quartzX-domain</module>
     </modules>
 
     <dependencies>

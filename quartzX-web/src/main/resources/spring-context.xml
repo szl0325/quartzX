@@ -8,6 +8,6 @@ http://www.springframework.org/schema/task http://www.springframework.org/schema
 
 	<task:annotation-driven/>
 	<context:property-placeholder location="classpath:props/*.properties" ignore-unresolvable="true" />
-
+	<context:component-scan base-package="com.szl.quartzx.service"/>
 
 </beans>

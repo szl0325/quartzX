@@ -12,6 +12,7 @@ $(function () {
     ];
     $("#jobTable").click(function(){
         var param={};
-        pagination($("#jobTable"), param, "POST", "/job/showPage", columns);
+        pagination($("#jobTable"), param, "POST", "/job/jobList", columns);
     });
+    $("#jobTable").click();
 });

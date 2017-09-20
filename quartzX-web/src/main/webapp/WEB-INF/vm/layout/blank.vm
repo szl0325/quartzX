@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/misc/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="/misc/css/dataTables.bootstrap.min.css">
 
+    <script type="text/javascript" src="/misc/js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="/misc/js/plugin/datatables/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="/misc/js/plugin/datatables/dataTables.bootstrap.min.js"></script>
 </head>
