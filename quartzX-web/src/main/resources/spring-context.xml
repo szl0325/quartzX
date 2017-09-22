@@ -10,4 +10,5 @@ http://www.springframework.org/schema/task http://www.springframework.org/schema
 	<context:property-placeholder location="classpath:props/*.properties" ignore-unresolvable="true" />
 	<context:component-scan base-package="com.szl.quartzx.service"/>
 
+	<import resource="spring/spring-config-quartz.xml"/>
 </beans>
