@@ -17,8 +17,6 @@
     <link rel="stylesheet" type="text/css" media="screen" href="misc/css/smartadmin-skins.min.css">
     <!-- SmartAdmin RTL Support -->
     <link rel="stylesheet" type="text/css" media="screen" href="misc/css/smartadmin-rtl.min.css">
-    <!-- #GOOGLE FONT -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 </head>
 
 <body class="animated fadeInDown">
@@ -27,7 +25,7 @@
     <div id="content" class="container">
         <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4" style="left: 35%;margin-top: 10%;position: absolute">
             <div class="well no-padding">
-                <form action="main.html" id="login-form" class="smart-form client-form">
+                <form id="login-form" class="smart-form client-form">
                     <header>
                         用户登录
                     </header>
@@ -47,6 +45,7 @@
                         </section>
                     </fieldset>
                     <footer>
+                        <span id="error_tip" style="color: red"></span>
                         <button type="submit" class="btn btn-primary">
                             Sign in
                         </button>
@@ -64,8 +63,9 @@
 <script src="misc/js/jquery-ui-1.10.3.min.js"></script>
 <script src="misc/js/app.config.js"></script>
 <script src="misc/js/bootstrap/bootstrap.min.js"></script>
-<script src="misc/js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
 <script src="misc/js/app.min.js"></script>
+<script src="misc/js/plugin/jquery-validate/jquery.validate.min.js"></script>
 
 <script type="text/javascript">
     $(function() {
@@ -88,6 +88,21 @@
             },
             errorPlacement : function(error, element) {
                 error.insertAfter(element.parent());
+            },
+            submitHandler:function(form){
+                $.ajax({
+                    url:'login/doLogin',
+                    type: 'post',
+                    data: $("#login-form").serialize(),
+                    success:function (data) {
+                        var obj = JSON.parse(data);
+                        if(!obj.success){
+                            $('#error_tip').html(obj.message);
+                        }else {
+                            location.href ="main.html"
+                        }
+                    }
+                });
             }
         });
     });
