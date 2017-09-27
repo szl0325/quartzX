@@ -19,9 +19,9 @@ public class JobController {
     private JobService jobService;
 
     @RequestMapping("/showPage")
-    public String showPage(){
+    public String showPage() {
         logger.error("JobController.showPage()");
-        return "job/jobList";
+        return "job/job_list";
     }
 
     @RequestMapping("/jobList")

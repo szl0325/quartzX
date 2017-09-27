@@ -167,7 +167,12 @@
                 <li>Home</li>
             </ol>
         </div>
-        <div id="content">
+        <div id="loadingContent" style="color: #666666;padding: 10px;display: none">
+            <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+            <span style="font-weight: 800;font-size: large">Loading...</span>
+        </div>
+        <div id="content" style="padding: 10px;">
+
         </div>
     </div>
 <!-- END #MAIN PANEL -->
@@ -176,9 +181,11 @@
     <script src="misc/js/nav_menu.js"></script>
     <script type="text/javascript">
         function gotoFunc(url,element) {
-//            var pName = $(".accordion li.open .link").text();
-//            var a = '<li>Home</li><li>'+pName+'</li><li class="active">'+$(element).text()+'</li>';
-//            $(".breadcrumb").html(a);
+            $('#content').html('');
+            $("#loadingContent").show();
+            $('#content').load(url,function(){
+                $("#loadingContent").hide();
+            });
         }
     </script>
 </body>
