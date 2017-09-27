@@ -23,7 +23,8 @@ $(function() {
 	}
 
 	var accordion = new Accordion($('#accordion'), false);
-	
+
+	/*面包屑*/
 	$(".submenu a").click(function () {
         var pName = $(".accordion li.open .link").text();
         var name = $(this).text();
