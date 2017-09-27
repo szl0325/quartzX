@@ -3,122 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <title>quartzX</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- #CSS Links -->
-    <!-- Basic Styles -->
     <link rel="stylesheet" type="text/css" media="screen" href="misc/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="misc/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="misc/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="misc/css/nav_menu.css">
 
-    <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
-    <link rel="stylesheet" type="text/css" media="screen" href="misc/css/smartadmin-production-plugins.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="misc/css/smartadmin-production.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="misc/css/smartadmin-skins.min.css">
-    <!-- SmartAdmin RTL Support -->
-    <link rel="stylesheet" type="text/css" media="screen" href="misc/css/smartadmin-rtl.min.css">
+    <style>
+        body{
+            font-family: RobotoDraft,Roboto,sans-serif;
+            -webkit-font-smoothing: antialiased;
+            background: url(/misc/img/mybg.png);
+        }
+        #header{
+            display: block;
+            height: 49px;
+            margin: 0;
+            padding: 0 13px 0 0;
+            position: relative;
+            z-index: 905;
+            background-color: #2196F3;
+        }
+        #header>:first-child, #left-panel {
+            width: 220px;
+            display: inline-block;
+        }
+        #header>div {
+            display: inline-block;
+            vertical-align: middle;
+            height: 49px;
+            float: left;
+        }
+        #logo-group>span#logo:before {
+            content: "SmartAdmin";
+            font-size: 17px;
+            color: #fff;
+            font-weight: 300;
+            margin-top: 10px;
+            margin-left: 7px;
+            display: block;
+        }
+        .loginOutIcon{
+            color: white;
+            padding-top: 15px;
+            margin-right: 15px;
+        }
+        .login-info {
+            height: 120px;
+            background: url(/misc/img/cover.png) no-repeat center center;
+            margin-top: -1px!important;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            border: 0;
+        }
+        .login-info a {
+            text-decoration: none!important;
+            color: #c0bbb7;
+            display: inline-block;
+            margin-top: 6px;
+        }
+        .login-info img {
+            border-radius: 50%;
+            width: 50px;
+            border: 3px solid rgba(0,0,0,.14);
+            box-sizing: content-box;
+            height: auto;
+            display: inline-block;
+            margin-top: 3px;
+            margin-left: 10px;
+            border-left-color: #40ac2b!important
+        }
+        .login-info a span {
+            text-transform: capitalize;
+            font-size: 14px;
+            text-decoration: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+            display: block;
+            background: rgba(0,0,0,.2);
+            width: 220px;
+            max-width: 100%;
+            padding: 7px 10px;
+            margin-top: 22px;
+            color: #fff;
+        }
+        #main {
+            margin-left: 220px;
+            padding: 0;
+            min-height: 100%;
+            position: relative;
+            display: block;
+        }
+        #ribbon {
+            background: rgba(255,255,255,.4);
+            min-height: 40px;
+            padding: 0 13px;
+            position: relative;
+        }
+        #ribbon .breadcrumb {
+            display: inline-block;
+            margin: 0;
+            padding: 11px 34px 11px 0!important;
+            background: 0 0;
+            vertical-align: top;
+            text-decoration: none!Important;
+        }
+    </style>
 </head>
-<body class="desktop-detected smart-style-6">
-<!-- #HEADER -->
-<header id="header">
-    <div id="logo-group">
-        <span id="logo"> <img src="misc/img/logo.png" alt="QuartzX"> </span>
-    </div>
-
-    <div class="pull-right">
-        <div id="hide-menu" class="btn-header pull-right">
-            <span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+<body>
+    <!-- #HEADER -->
+    <header id="header">
+        <div id="logo-group">
+            <span id="logo"></span><!--以后有了图标logo放着里-->
         </div>
-        <div id="logout" class="btn-header transparent pull-right">
-            <span>
-                <a href="login/loginOut" title="Sign Out" data-action="userLogout" data-logout-msg="注销当前账号并返回登录页">
-                    <i class="fa fa-sign-out"></i>
-                </a>
-            </span>
-        </div>
-    </div>
-</header>
-<!-- END HEADER -->
 
-<!-- #NAVIGATION -->
-    <aside id="left-panel">
+        <div class="pull-right">
+            <a href="login/loginOut" title="注销">
+                <i class="fa fa-sign-out fa-lg loginOutIcon"></i>
+            </a>
+        </div>
+    </header>
+    <!-- END HEADER -->
+
+    <!-- #NAVIGATION -->
+    <div id="left-panel" style="position: absolute;z-index: 2;background-color: #F5FFFA;min-height:calc(100% - 49px)">
         <div class="login-info">
             <span>
-                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-                    <img src="misc/img/avatars/sunny.png" alt="me" class="online" />
-                    <span>
-                        sunzhanlong
-                    </span>
-                    <i class="fa fa-angle-down"></i>
+                <a href="javascript:void(0);">
+                    <img src="misc/img/avatars/sunny.png"/>
+                    <span>sunzhanlong</span>
                 </a>
             </span>
         </div>
         <nav>
-            <ul>
+            <ul id="accordion" class="accordion">
                 <li>
-                    <a><i class="fa fa-lg fa-fw fa-tasks"></i> <span class="menu-item-parent">Job</span></a>
-                    <ul>
-                        <li>
-                            <a href="/job/showPage"><span class="menu-item-parent">job管理</span></a>
-                        </li>
+                    <div class="link"><i class="fa fa-clock-o"></i>Job Manage<i class="fa fa-chevron-down"></i></div>
+                    <ul class="submenu">
+                        <li class="ripple"><a onclick="javascript: gotoFunc('/job/showPage',this); return false;">Job管理</a></li>
+                        <li class="ripple"><a>菜单2</a></li>
+                        <li class="ripple"><a>菜单3</a></li>
                     </ul>
                 </li>
-
+                <li>
+                    <div class="link"><i class="fa fa-clock-o"></i>测试<i class="fa fa-chevron-down"></i></div>
+                    <ul class="submenu">
+                        <li class="ripple"><a onclick="javascript: gotoFunc('/job/showPage',this); return false;">Job管理</a></li>
+                        <li class="ripple"><a>菜单4</a></li>
+                        <li class="ripple"><a>菜单5</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
-    </aside>
-<!-- END NAVIGATION -->
+    </div>
 
 <!-- #MAIN PANEL -->
     <div id="main" role="main">
         <div id="ribbon">
-                    <span class="ribbon-button-alignment">
-                        <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true" data-reset-msg="Would you like to RESET all your saved widgets and clear LocalStorage?"><i class="fa fa-refresh"></i></span>
-                    </span>
             <ol class="breadcrumb">
-                <!-- This is auto generated -->
+                <li>Home</li>
             </ol>
-            <!-- end breadcrumb -->
-
-            <!-- You can also add more buttons to the
-            ribbon for further usability
-
-            Example below:
-
-            <span class="ribbon-button-alignment pull-right" style="margin-right:25px">
-                <a href="#" id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa fa-grid"></i> Change Grid</a>
-                <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa fa-plus"></i> Add</span>
-                <button id="search" class="btn btn-ribbon" data-title="search"><i class="fa fa-search"></i> <span class="hidden-mobile">Search</span></button>
-            </span> -->
-
         </div>
-
         <div id="content">
         </div>
     </div>
 <!-- END #MAIN PANEL -->
-
-<!-- js -->
     <script src="misc/js/jquery-2.1.1.min.js"></script>
     <script src="misc/js/jquery-ui-1.10.3.min.js"></script>
-    <script src="misc/js/app.config.js"></script>
-    <script src="misc/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
-    <script src="misc/js/bootstrap/bootstrap.min.js"></script>
-    <script src="misc/js/notification/SmartNotification.min.js"></script>
-    <!--[if IE 8]>
-    <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
-    <![endif]-->
-    <script src="misc/js/app.min.js"></script>
-    <script src="misc/js/smart-chat-ui/smart.chat.ui.min.js"></script>
-    <script src="misc/js/smart-chat-ui/smart.chat.manager.min.js"></script>
+    <script src="misc/js/nav_menu.js"></script>
     <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+        function gotoFunc(url,element) {
+//            var pName = $(".accordion li.open .link").text();
+//            var a = '<li>Home</li><li>'+pName+'</li><li class="active">'+$(element).text()+'</li>';
+//            $(".breadcrumb").html(a);
+        }
     </script>
 </body>
 </html>
