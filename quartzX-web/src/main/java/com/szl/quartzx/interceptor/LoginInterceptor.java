@@ -10,6 +10,8 @@ public class LoginInterceptor implements HandlerInterceptor{
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
         Object user = request.getSession().getAttribute("user_session_key");
         String requestType = request.getHeader("X-Requested-With");//识别ajax的响应头
+        System.out.println("requestType===="+requestType);
+        System.out.println("url===="+request.getRequestURI());
         if(user ==null){
             if (requestType != null && requestType.equals("XMLHttpRequest")) {//如果是ajax类型，响应logout给前台
                 response.getWriter().print("logout");

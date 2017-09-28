@@ -35,6 +35,7 @@
         <url-pattern>*.woff</url-pattern>
         <url-pattern>*.ttf</url-pattern>
         <url-pattern>*.mp3</url-pattern>
+        <url-pattern>*.map</url-pattern>
         <url-pattern>/misc/**"</url-pattern>
     </servlet-mapping>
     <servlet>
