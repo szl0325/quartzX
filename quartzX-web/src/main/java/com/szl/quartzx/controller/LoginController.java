@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -36,10 +37,9 @@ public class LoginController {
         }
     }
 
-    @RequestMapping("/loginOut")
+    @RequestMapping(value = "/loginOut")
     public void loginOut(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.getSession().invalidate();
         logger.error("用户注销!");
-        response.sendRedirect("/login.html");
     }
 }

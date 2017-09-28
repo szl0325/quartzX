@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="misc/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="misc/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="misc/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="misc/bealert/beAlert.css">
     <link rel="stylesheet" type="text/css" media="screen" href="misc/css/nav_menu.css">
     <link rel="stylesheet" type="text/css" media="screen" href="misc/css/layout_main.css">
 </head>
@@ -17,7 +18,7 @@
         </div>
 
         <div class="pull-right">
-            <a href="login/loginOut" title="注销">
+            <a id="loginOut" title="注销">
                 <i class="fa fa-sign-out fa-lg loginOutIcon"></i>
             </a>
         </div>
@@ -73,8 +74,25 @@
 <!-- END #MAIN PANEL -->
     <script src="misc/js/jquery-2.1.1.min.js"></script>
     <script src="misc/js/jquery-ui-1.10.3.min.js"></script>
+    <script src="misc/bealert/beAlert.js"></script>
     <script src="misc/js/nav_menu.js"></script>
     <script type="text/javascript">
+        $(function () {
+            $("#loginOut").click(function () {
+                confirm("注销当前账号?","", function (isConfirm) {
+                    if (isConfirm) {
+                        $.ajax({
+                            url:'/login/loginOut',
+                            success:function (data) {
+                                window.location.href="/login.html";
+                            }
+                        });
+                    } else {
+                        //after click the cancel
+                    }
+                }, {confirmButtonText: '确定!', cancelButtonText: '取消', width: 400});
+            });
+        });
         function gotoFunc(url) {
             $('#content').html('');
             $("#loadingContent").show();
