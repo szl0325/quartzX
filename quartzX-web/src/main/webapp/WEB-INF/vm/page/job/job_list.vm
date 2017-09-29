@@ -1,9 +1,9 @@
 <div class="widget-body no-padding">
-
+    <!--新建job表单-->
     <button class="btn btn-info" data-toggle="modal" data-target="#myModal">
         新建job
     </button>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -15,7 +15,10 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    在这里添加一些文本
+                    <form role="form">
+                        <label class="form-label" for="name">名称</label>
+                        <input type="text" class="form-control" id="name" placeholder="请输入名称">
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭
