@@ -9,8 +9,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/misc/css/dataTables.bootstrap.min.css">
 
     <script type="text/javascript" src="/misc/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/misc/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/misc/js/datatables/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="/misc/js/datatables/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="/misc/js/jquery-validate/jquery.validate.min.js"></script>
 </head>
 <body>
 $screen_content
